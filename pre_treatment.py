@@ -23,9 +23,6 @@ def label_chars(sent):
 	return chars_labels
 
 def treatment(ref_file, rslt_file):
-	N_ref = 0 #reference 中のフレーズ数
-	N_rslt = 0 #result 中のフレーズ数
-	N_cor = 0 #result 中の正解フレーズ数
  
 	with open(ref_file) as ref, open(rslt_file) as rslt:
 		for (i, sent_ref) , sent_rslt in  zip(enumerate(ref), rslt):
@@ -39,7 +36,6 @@ def treatment(ref_file, rslt_file):
 				print("rslt_sent :", sent_rslt)  
 				raise ValueError("ref and rslt doesn't match about characters")
 
-			n_cor = 0 #result出力の今見ているsentence中の正解フレーズ数
 		
 			for char_ref, char_rslt in zip(chars_ref, chars_rslt):
 				print(char_ref[0], char_ref[1], char_rslt[1],sep="\t")
@@ -70,9 +66,6 @@ def parse_args():
 
 def main():
 	args = parse_args()
-
-	#print("reference :", args.ref)
-	#print("result    :", args.rslt)
 
 	treatment(args.ref, args.rslt) 
 
