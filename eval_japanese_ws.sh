@@ -6,5 +6,5 @@ sys_file=$2
 echo "ref_file : ${ref_file}"
 echo "sys_file : ${sys_file}"
 
-python scripts/evaluate_japanese_ws/pre_treatment.py ${ref_file} ${result_path} |perl scripts/conlleval.pl -d "\t"
+python pre_treatment.py ${ref_file} ${result_path} |perl conlleval.pl -d "\t"
 
