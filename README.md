@@ -8,5 +8,5 @@ wget http://www.cnts.ua.ac.be/conll2000/chunking/conlleval.txt -O  conlleval.pl
 
 以下のように、正解データ `ref_file`、システム出力ファイル`sys_file`を与えることで評価を行います。
 ```bash
-$ bash  eval_japanese_ws.sh ref_file sys_file
+bash  eval_japanese_ws.sh ref_file sys_file
 ```
